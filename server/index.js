@@ -1,4 +1,4 @@
-const dotenv = require("dotenv").config({ path: "config.env" });
+const dotenv = require("dotenv");
 const express = require("express");
 const session = require("express-session");
 const helmet = require("helmet");
@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 // app will not work without setting up the config.env file
 // https://belugajs.com/docs/new-store
-if (dotenv.error) throw dotenv.error;
+// if (dotenv.error) throw dotenv.error;
 
 var sess = {
   secret: process.env.SESSION_SECRET,
